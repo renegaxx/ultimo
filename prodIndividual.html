@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+    <title>Arngren - Bicicleta Elétrica - Três Rodas</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <div id="container-header">
+            <div class="box-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="logo">
+                    <h1>Arngren</h1>
+                </a>
+            </div>
+
+            <nav id="container-nav">
+                <a href="index.html">Home</a>
+
+                <div class="container-dropdown">
+                    <div class="topico-nav">
+                        <p>Veículos</p>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="box-dropdown">
+                        <a href="#">Bicicletas</a>
+                        <a href="#">Carros</a>
+                        <a href="#">Kart</a>
+                        <a href="#">Motocicletas</a>
+                        <a href="#">Scooter</a>
+                        <a href="#">Vans</a>
+                    </div>
+                </div>
+
+                <div class="container-dropdown">
+                    <div class="topico-nav">
+                        <p>Brinquedos</p>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="box-dropdown">
+                        <a href="#">Arte e Artesanato</a>
+                        <a href="#">Construção</a>
+                        <a href="#">Eletrônicos</a>
+                        <a href="#">Exterior</a>
+                        <a href="#">Jogos e Quebra-Cabeças</a>
+                        <a href="#">Pelúcia</a>
+                    </div>
+                </div>
+
+                <div class="container-dropdown">
+                    <div class="topico-nav">
+                        <p>Eletrodomésticos</p>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="box-dropdown">
+                        <a href="#">Climatização</a>
+                        <a href="#">Cozinha</a>
+                        <a href="#">Lavanderia</a>
+                        <a href="#">Pequenos Eletrodomésticos</a>
+                        <a href="#">Lavanderia</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="box-pesquisa">
+                <input type="search" id="barraPesquisa" placeholder="Buscar">
+                <button id="btn-buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main id="main">
+        <!-- caminho -->
+        <section id="caminho">
+            <a href="#">Veículos</a>
+            <img src="img/arrowVirada.png" alt="">
+            <a href="#">Bicicletas</a>
+            <img src="img/arrowVirada.png" alt="">
+            <a href="#">Bicicleta Elétrica - Três Rodas</a>
+        </section>
+
+        <!-- individual -->
+        <section id="prodIndividual">
+            <div class="image-gallery">
+                <div class="thumbnails">
+                    <img src="img/principal.png" alt="Thumbnail 1" onclick="changeImage('img/principal.png')">
+                    <img src="img/1.png" alt="Thumbnail 2" onclick="changeImage('img/1.png')">
+                    <img src="img/2.png" alt="Thumbnail 3" onclick="changeImage('img/2.png')">
+                    <img src="img/3.png" alt="Thumbnail 3" onclick="changeImage('img/3.png')">
+                    <img src="img/4.png" alt="Thumbnail 4" onclick="changeImage('img/4.png')">
+                </div>
+                <img id="principal" src="img/principal.png" alt="Bicicleta Elétrica">
+            </div>
+
+            <div class="box-detalhes">
+                <h1>Bicicleta Elétrica - Três Rodas</h1>
+                <p>Triciclo Elétrico Fat Tire, Garfo de Suspensão Frontal, Freio a Disco, Compartimento de Armazenamento
+                    Removível e Assento, 500W, 750W, 48V, 17.5, 20Ah.
+                </p>
+                <div class="box-precos">
+                    <p class="preco">R$ 13.794,14</p>
+                    <a href="confirCompra.html"><button>COMPRAR</button></a>
+                </div>
+
+                <div class="color-options">
+                    <h2>Color:</h2>
+
+                    <div class="container-color">
+                        <div class="box-color" onclick="changeColor('img/preto.png')">
+                            <div class="color" style="background-color: black;">
+                            </div>
+                            <p>Preto</p>
+                        </div>
+
+                        <div class="box-color" onclick="changeColor('img/branco.png')">
+                            <div class="color" style="background-color: white;">
+                            </div>
+                            <p>Branco</p>
+                        </div>
+
+                        <div class="box-color" onclick="changeColor('img/vermelho.png')">
+                            <div class="color" style="background-color: red;">
+                            </div>
+                            <p>Verme...</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- semelhantes -->
+        <section id="semelhantes">
+            <img src="img/bolinhasUm.png" alt="bolinhas" class="bolinhasUm">
+
+            <h1>semelhantes</h1>
+            <h2>Clientes também pesquisam</h2>
+
+            <div class="container-carts">
+                <div class="cart-prodSmilar">
+                    <img src="img/bike1.png" alt="bike grande com cesta">
+
+                    <div class="box-infosProd">
+                        <h3>Urban Classic</h3>
+                        <p>R$ 2.850,00</p>
+                        <a href="#"><button>Ver Mais</button></a>
+                    </div>
+                </div>
+
+                <div class="cart-prodSmilar">
+                    <img src="img/bike2.png" alt="bike cinza com 2  suporte para garrafas e rodas grandes">
+
+                    <div class="box-infosProd">
+                        <h3>Ascent Carbon Pro</h3>
+                        <p>R$ 12.500,00</p>
+                        <a href="#"><button>Ver Mais</button></a>
+                    </div>
+                </div>
+
+                <div class="cart-prodSmilar">
+                    <img src="img/bike3.png" alt="bike moderna com detalhes vermelha">
+
+                    <div class="box-infosProd">
+                        <h3>TrailMaster X100</h3>
+                        <p>R$ 7.500,00</p>
+                        <a href="#"><button>Ver Mais</button></a>
+                    </div>
+                </div>
+
+                <div class="cart-prodSmilar">
+                    <img src="img/bike4.png" alt="bike branca de montanha">
+
+                    <div class="box-infosProd">
+                        <h3>RockRider Pro 350</h3>
+                        <p>R$ 4.800,00</p>
+                        <a href="#"><button>Ver Mais</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <img src="img/bolinhasDois.png" alt="bolinhas" class="bolinhasDois">
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+        <div id="container-footer">
+            <div class="contatos">
+                <div class="box-logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="logo">
+                        <h1>Arngren</h1>
+                    </a>
+                </div>
+
+                <div class="box-contatos">
+                    <p>Entre em contato em caso de dúvidas ou para mais informações.</p>
+
+                    <div class="icones-contatos">
+                        <div class="circulo">
+                            <a href="skype:frithjof.arngren?chat"><i class="fa-brands fa-skype"></i></a>
+                        </div>
+
+                        <div class="circulo">
+                            <a href="mailto:frithjof@arngren.net"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+
+                        <div class="circulo">
+                            <a href="mailto:frithjof.arngren@gmail.com"><i class="fa-solid fa-at"></i></a>
+                        </div>
+
+                        <div class="phone-container circulo">
+                            <a href="tel:+4722149166"><i class="fa-solid fa-phone"></i></a>
+                            <div class="tooltip">+47-22149166</div>
+                        </div>
+
+                        <div class="phone-container circulo">
+                            <a href="tel:+4722149166"><img src="img/whatsaap.png" alt=""></a>
+                            <div class="tooltip">+47-92060873</div>
+                        </div>
+
+                        <div class="phone-container circulo">
+                            <a href="tel:+4722149166"><i class="fa-solid fa-fax"></i></a>
+                            <div class="tooltip">+47-22148237</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-links">
+                <div class="box-link">
+                    <h1>Atendimento ao cliente</h1>
+                    <a href="#">Contate-nos</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Envio</a>
+                    <a href="#">Devoluções</a>
+                </div>
+
+                <div class="box-link">
+                    <h1>Departamentos</h1>
+                    <a href="#">Veículos</a>
+                    <a href="#">Brinquedos</a>
+                    <a href="#">Eledromésticos</a>
+                    <a href="#">Itens Únicos</a>
+                </div>
+
+                <div class="box-link">
+                    <h1>Geral</h1>
+                    <a href="index.html">Home</a>
+                    <a href="#">Destaques</a>
+                    <a href="#">Serviços</a>
+                    <a href="#">Comentários</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="linha"></div>
+
+        <div class="direitoautoral">
+            <p>Todos os direitos reservados por Arngren.net</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

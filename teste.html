@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Comentários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f8f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .carousel-container {
+            text-align: center;
+            width: 80%;
+        }
+
+        .carousel-container h2 {
+            color: #18a47e;
+            font-weight: bold;
+        }
+
+        .carousel-container h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .feedback-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: left;
+        }
+
+        .feedback-card img.avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .feedback-card h4 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .feedback-card p {
+            margin: 0;
+            color: #777;
+        }
+
+        .stars {
+            color: #ffcd3c;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            border: 1px solid #18a47e;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .prev-button {
+            left: -20px;
+        }
+
+        .next-button {
+            right: -20px;
+        }
+
+        .carousel-button:hover,
+        .carousel-button.active {
+            background-color: #18a47e;
+            color: #fff;
+        }
+
+        .carousel-button span {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-container">
+        <h2>FEEDBACK</h2>
+        <h3>Comentários Dos Clientes</h3>
+        <div class="carousel">
+            <button class="carousel-button prev-button" id="prevButton">
+                <span>&lt;</span>
+            </button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <!-- Comentário 1 -->
+                    <li class="carousel-slide current-slide">
+                        <div class="feedback-card">
+                            <img src="avatar1.jpg" alt="Avatar" class="avatar">
+                            <h4>Alex Feder</h4>
+                            <p>07/08/24</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Uma, torto tempus.</p>
+                            <div class="stars">
+                                ★★★★☆
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Repita para os outros 7 comentários -->
+                    <li class="carousel-slide">
+                        <div class="feedback-card">
+                            <img src="avatar2.jpg" alt="Avatar" class="avatar">
+                            <h4>Jane Doe</h4>
+                            <p>07/08/24</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Uma, torto tempus.</p>
+                            <div class="stars">
+                                ★★★☆☆
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Mais 6 comentários... -->
+                </ul>
+            </div>
+            <button class="carousel-button next-button" id="nextButton">
+                <span>&gt;</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.getElementById('nextButton');
+        const prevButton = document.getElementById('prevButton');
+
+        let currentSlideIndex = 0;
+
+        function updateCarousel() {
+            const amountToMove = slides[currentSlideIndex].style.width;
+            track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateCarousel();
+            nextButton.classList.add('active');
+            setTimeout(() => nextButton.classList.remove('active'), 150);
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+            prevButton.classList.add('active');
+            setTimeout(() => prevButton.classList.remove('active'), 150);
+        });
+
+    </script>
+</body>
+
+</html>
